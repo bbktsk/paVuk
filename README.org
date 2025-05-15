@@ -1,0 +1,35 @@
+* paVuk, a RISC-V implementation by a complete n00b
+
+#+BEGIN_QUOTE
+Dedicated to Marek "Pavuk" Antozi, who had to audacity to die before I
+got a chance to brag about my own RISC-V CPU.
+#+END_QUOTE
+
+This is my attempt at simple RISC-V Verilog implemenation. Note that I
+know basically nothing about Verilog, CPU design and a lot of other
+related stuff, so you should definitely not learn from this. Continue
+at your own risk.
+
+For more detailed story of this project, see [[https://bbktsk.io/][my blog]].
+
+** Setup
+
+On Arch Linux, I have installed the following packages:
+
+- =iverilog-12.0-2=
+- =verilator-5.034-1=
+- =openfpgaloader-0.13.1-1=
+- =gtkwave-3.3.121-1=
+
+As =nextpnr= is not available as a regular package, these are
+installed from AUR:
+
+- =prjtrellis-nightly=
+- =yosys-nightly=
+- =nextpnr-ecp5-nightly=
+
+** Resources
+
+In no particular order:
+- [[https://www.youtube.com/@JohnsBasement][John's basement YouTube channel]] and related [[https://github.com/johnwinans/Verilog-Examples][repo]].
+- [[https://www.ece.ucdavis.edu/~bbaas/281/notes/Handout16.verilog5.pdf][UC Davis slides on Verilog testing]].

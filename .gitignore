@@ -1,0 +1,6 @@
+blog
+*.bit
+*.gen.json
+*.gen.config
+*.gen.vvp
+*.vcd
