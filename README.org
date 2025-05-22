@@ -12,6 +12,11 @@ at your own risk.
 
 For more detailed story of this project, see [[https://bbktsk.io/][my blog]].
 
+** Target device
+
+Lattice ECP5. Specifically, LFE5U-85F-6BG381C (caBGA, 381 pins, 84k
+LUTs) in Radiona ULX3S.
+
 ** Setup
 
 On Arch Linux, I have installed the following packages:
@@ -38,3 +43,4 @@ In no particular order:
 - [[https://www.youtube.com/@JohnsBasement][John's basement YouTube channel]] and related [[https://github.com/johnwinans/Verilog-Examples][repo]].q
 - [[https://www.ece.ucdavis.edu/~bbaas/281/notes/Handout16.verilog5.pdf][UC Davis slides on Verilog testing]].
 - ULX3S layout from [[https://x.com/john_newall/status/1427109710566551559][@john_newall]]
+- [[https://github.com/danderson/ulxs/blob/main/lpf.md][Lattice Preference File (lpf) specification]]
