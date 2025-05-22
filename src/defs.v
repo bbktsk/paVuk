@@ -1,5 +1,6 @@
 `define XLEN 32
 `define XMSB 31
+`define XBUS `XMSB:0
 
 // ALU opcodes:
 // for arithmetic instructitons start it is bits [30][14:12] of the opcode

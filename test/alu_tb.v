@@ -5,11 +5,11 @@
 `default_nettype none
 
 module alu_tb();
-   reg [`XMSB:0] a;
-   reg [`XMSB:0] b;
+   reg [`XBUS] a;
+   reg [`XBUS] b;
    reg           is_cond;
    reg [`ALU_OP_MSB:0] op;
-   wire [`XMSB:0]      result;
+   wire [`XBUS]      result;
 
    alu dut (.a(a),
             .b(b),
@@ -22,7 +22,7 @@ module alu_tb();
    string data_line;
    string op_name;
 
-   reg [`XMSB:0] expected;
+   reg [`XBUS] expected;
 
    initial begin
       $dumpfile("alu_tb.vcd");
