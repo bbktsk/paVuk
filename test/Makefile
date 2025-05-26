@@ -3,6 +3,10 @@
 SRC = ../src
 IVERILOG = iverilog -g2012 -I$(SRC)
 
-alu_tb:
-	$(IVERILOG) -o alu_tb.gen.vvp alu_tb.v $(SRC)/alu.v
-	vvp alu_tb.gen.vvp
+ALU_TB:
+	$(IVERILOG) -o ALU_TB.gen.vvp ALU_TB.v $(SRC)/ALU.v
+	vvp ALU_TB.gen.vvp
+
+Registers_TB:
+	$(IVERILOG) -o Registers_TB.gen.vvp Registers_TB.v $(SRC)/Registers.v
+	vvp Registers_TB.gen.vvp

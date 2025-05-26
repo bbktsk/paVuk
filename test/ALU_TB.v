@@ -4,14 +4,14 @@
 
 `default_nettype none
 
-module alu_tb();
+module ALU_TB();
    reg [`XBUS] a;
    reg [`XBUS] b;
    reg           is_cond;
    reg [`ALU_OP_MSB:0] op;
    wire [`XBUS]      result;
 
-   alu dut (.a(a),
+   ALU dut (.a(a),
             .b(b),
             .op(op),
             .is_cond(is_cond),
@@ -26,16 +26,17 @@ module alu_tb();
 
    initial begin
       $dumpfile("alu_tb.vcd");
-      $dumpvars(0, alu_tb);
+      $dumpvars(0, ALU_TB);
 
-      data_file = $fopen("alu_tb.csv", "r");
+      data_file = $fopen("ALU_TB.csv", "r");
       if (data_file == 0) begin
-         $display("Error opening alu_tb.csv");
+         $display("Error opening ALU_TB.csv");
          $finish;
       end
    end
 
    always begin
+
       io_code = $fscanf(data_file, "%s\n", data_line);
 
       if (data_line[0] == 33) begin // 33 is '!' and marks instuction definition

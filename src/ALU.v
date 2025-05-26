@@ -1,11 +1,11 @@
 `include "defs.v"
 
-module alu(input [`XBUS]       a,
-           input [`XBUS]       b,
+module ALU(input [`XBUS]         a,
+           input [`XBUS]         b,
            input                 is_cond,
            input [`ALU_OP_MSB:0] op,
 
-           output reg [`XBUS]  result);
+           output reg [`XBUS]    result);
 
    always @(*) begin
       if (is_cond) begin
