@@ -2,6 +2,15 @@
 `define XMSB 31
 `define XBUS `XMSB:0
 
+`define R_COUNT 32
+`define R_LAST 31
+`define R_MSB 4
+
+`define PC_MODE_INC 1
+`define PC_MODE_SET 2
+`define PC_MODE_ADD 3
+`define PC_MODE_MSB 1
+
 // ALU opcodes:
 // for arithmetic instructitons start it is bits [30][14:12] of the opcode
 `define ALU_OP_ADD  4'b0000
