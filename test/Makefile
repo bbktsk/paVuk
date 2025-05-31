@@ -15,3 +15,6 @@ ProgramCounter_TB:
 	$(IVERILOG) -o ProgramCounter_TB.gen.vvp ProgramCounter_TB.v $(SRC)/ProgramCounter.v
 	vvp ProgramCounter_TB.gen.vvp
 
+Button_TB:
+	$(IVERILOG) -D BK_TEST -o Button_TB.gen.vvp Button_TB.v $(SRC)/Button.v
+	vvp Button_TB.gen.vvp

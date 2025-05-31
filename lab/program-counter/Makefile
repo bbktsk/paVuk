@@ -4,7 +4,7 @@ clean:
 
 
 PCOnULX3S.bit :
-	yosys -p "read_verilog -I ../../src PCOnULX3S.v ../../src/ProgramCounter.v; synth_ecp5 -json $*.gen.json"
+	yosys -p "read_verilog -I ../../src PCOnULX3S.v ../../src/ProgramCounter.v ../../src/Button.v; synth_ecp5 -json $*.gen.json"
 	nextpnr-ecp5 --85k --json $*.gen.json \
 		--lpf ../../src/ulx3s_v20.lpf \
 		--textcfg $*.gen.config
