@@ -25,6 +25,8 @@ On Arch Linux, I have installed the following packages:
 - =verilator-5.034-1= to make =flycheck= in =emacs= work
 - =openfpgaloader-0.13.1-1= to upload =.bit= to the device
 - =gtkwave-3.3.121-1= to view recordings from tests
+- =riscv64-linux-gnu-{binutils,gcc}= for compiler, assembler and
+  related tools.
 
 As =nextpnr= is not available as a regular package, these are
 installed from AUR:
@@ -39,8 +41,11 @@ Arch.
 ** Resources
 
 In no particular order:
+- [[https://www.chipverify.com/tutorials/verilog][Verilog tutorial at Chip Verify]]
 - [[https://github.com/emard/ulx3s/tree/master?tab=readme-ov-file][ULX3S repo (mine is 3.0.8)]]
 - [[https://www.youtube.com/@JohnsBasement][John's basement YouTube channel]] and related [[https://github.com/johnwinans/Verilog-Examples][repo]].q
 - [[https://www.ece.ucdavis.edu/~bbaas/281/notes/Handout16.verilog5.pdf][UC Davis slides on Verilog testing]].
 - ULX3S layout from [[https://x.com/john_newall/status/1427109710566551559][@john_newall]]
 - [[https://github.com/danderson/ulxs/blob/main/lpf.md][Lattice Preference File (lpf) specification]]
+- [[https://www.cs.cornell.edu/courses/cs3410/2019sp/riscv/interpreter/][Nice & simple RISC-V assembler and interpreter at Cornell]]
+- [[https://riscvasm.lucasteske.dev/#][Online RISC-V assembler]]
