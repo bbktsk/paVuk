@@ -1,0 +1,15 @@
+#! /bin/bash
+
+set -Eeuo pipefail
+trap cleanup SIGINT SIGTERM ERR EXIT
+
+cleanup() {
+  trap - SIGINT SIGTERM ERR EXIT
+  rm -f "$obj"
+}
+
+src="$1"
+obj=$(mktemp "${src}.gen.XXXXXX")
+riscv64-linux-gnu-as -march=rv32i -o "$obj" "$src"
+riscv64-linux-gnu-objdump -d "$obj" | \
+    awk -- '/^\s+[0-9a-f]+:\s+[0-9a-f]{8}\s+/ {print $2;}'

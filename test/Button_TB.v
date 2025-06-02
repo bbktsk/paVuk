@@ -14,15 +14,14 @@ module Button_TB();
       $dumpfile("Button_TB.vcd");
       $dumpvars(0, Button_TB);
 
-      $monitor("%06t: %d, button=%d, sync_button=%d, pressed=%d, pulse=%d, stages=%03b, pulsed=%d",
-               $time, clk, button, dut.sync_button, pressed, pulse, dut.stages, dut.pulsed);
+      // $monitor("%06t: %d, button=%d, sync_button=%d, pressed=%d, pulse=%d, stages=%03b, pulsed=%d",
+      //          $time, clk, button, dut.sync_button, pressed, pulse, dut.stages, dut.pulsed);
    end
 
    always begin
       #10;
       clk = ~clk;
    end
-
 
    Button dut(.button(button),
               .pressed(pressed),

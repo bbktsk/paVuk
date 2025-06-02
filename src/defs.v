@@ -1,3 +1,5 @@
+`ifndef __defs_v
+`define __defs_v
 `define XLEN 32
 `define XMSB 31
 `define XBUS `XMSB:0
@@ -6,6 +8,7 @@
 `define R_LAST 31
 `define R_MSB 4
 
+`define PC_MODE_HLT 0
 `define PC_MODE_INC 1
 `define PC_MODE_SET 2
 `define PC_MODE_ADD 3
@@ -31,3 +34,5 @@
 `define ALU_OP_LTU  4'b0110
 `define ALU_OP_GEU  4'b0111
 `define ALU_OP_MSB  3
+
+`endif
