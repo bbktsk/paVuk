@@ -5,22 +5,22 @@
 `default_nettype none
 
 module ALU_TB();
-   reg [`XBUS] a;
-   reg [`XBUS] b;
-   reg           is_cond;
+   reg [`XBUS] op1;
+   reg [`XBUS] op2;
+   reg         is_cond;
    reg [`ALU_OP_MSB:0] op;
-   wire [`XBUS]      result;
+   wire [`XBUS]        result;
 
-   ALU dut (.a(a),
-            .b(b),
+   ALU dut (.op1(op1),
+            .op2(op2),
             .op(op),
             .is_cond(is_cond),
             .result(result));
 
    integer data_file;
    integer io_code;
-   string data_line;
-   string op_name;
+   string  data_line;
+   string  op_name;
 
    reg [`XBUS] expected;
 
@@ -46,7 +46,7 @@ module ALU_TB();
             $finish;
          end
       end else begin
-         io_code = $sscanf(data_line, "%b,%b,%b", a, b, expected);
+         io_code = $sscanf(data_line, "%b,%b,%b", op1, op2, expected);
          if (io_code != 3) begin
             $display("Failed to parse test case %s", data_line);
             $finish;
@@ -54,10 +54,10 @@ module ALU_TB();
          #1;
          assert (result == expected)
            //$display("PASS@%0t: %s cnd=%01b op=%04b a=%08x b=%08x res=%08x exp=%08x",
-           //         $time, op_name, is_cond, op, a, b, result, expected);
-         else
-           $display("FAIL@%0t: %s cnd=%01b op=%04b a=%08x b=%08x res=%08x exp=%08x",
-                    $time, op_name, is_cond, op, a, b, result, expected);
+           //         $time, op_name, is_cond, op, op1, op2, result, expected);
+           else
+             $display("FAIL@%0t: %s cnd=%01b op=%04b a=%08x b=%08x res=%08x exp=%08x",
+                      $time, op_name, is_cond, op, op1, op2, result, expected);
       end
       if ($feof(data_file))
         $finish;
